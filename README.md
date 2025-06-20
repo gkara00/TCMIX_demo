@@ -1,7 +1,5 @@
 # TCMIX demonstration case
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15705339.svg)](https://doi.org/10.5281/zenodo.15705339)
-
 **TCMIX** is a NEMO configuration based on the `GYRE_PISCES` reference setup. It provides a controlled framework for testing turbulent vertical mixing schemes in the NEMO model under tropical cyclone (TC) wind forcing.
 
 # Background
@@ -162,7 +160,7 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 
 # Acknowledgments
 
-This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-20 2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and the insightfull discussions.
+This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-20 2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and the insightful discussions.
 
 # Future enhancements
 - Add the capability to re-constructed from storm track data (e.g., IBTrACS database)
