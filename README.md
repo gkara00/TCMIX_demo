@@ -1,5 +1,6 @@
 # TCMIX demonstration case
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15705339.svg)](https://doi.org/10.5281/zenodo.15705339)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gkara00/TCMIX_demo/HEAD)
 
 **TCMIX** is a NEMO configuration based on the `GYRE_PISCES` reference setup. It provides a controlled framework for testing turbulent vertical mixing schemes in the NEMO model under tropical cyclone (TC) wind forcing.
 
