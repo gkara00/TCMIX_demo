@@ -22,15 +22,15 @@ The wind forcing is re-constructed using the Holland (1980) parametric cyclone m
 <img src="./img/Holland_formula.png" alt="alt text" width="300" height="100"/>
 
 where,
-- `v_r`: Tangential wind speed (m/s)
+- `vr`: Tangential wind speed (m/s)
 - `b`: Shape parameter
 - `ρ`: Air density = 1.15 kg/m³
 - `e`: Euler’s number ≈ 2.718
-- `v_m`: Max sustained wind speed (user-defined)
-- `p_oci`: Pressure at outermost closed isobar (Pa)
-- `p_c`: Central pressure (Pa)
+- `vm`: Max sustained wind speed (user-defined)
+- `poci`: Pressure at outermost closed isobar (Pa)
+- `pc`: Central pressure (Pa)
 - `r`: Distance from storm center (km)
-- `R_m`: Radius of max winds (km)
+- `Rm`: Radius of max winds (km)
 - `f`: Coriolis parameter depending on latitude `φ`
 
 Example `namelist_cfg` block under `&namusr_def`.
