@@ -26,7 +26,7 @@
    pc    = 95000.0      ! pressure at the centre of the storm [Pa]
    poci  = 101000.0     ! pressure at outermost closed isobar of the storm [Pa]
    ln_move = .true.     ! =T: Moving TC along the initial Latitude westward | =F stationary TC
-   tc_speed    = 5.0    ! Tropical cyclone moving speed [m/s]
+   tc_speed = 0.05      ! cyclone moving speed [m/s]
 !
 !* Parameters for initial Temperature and Salinity profiles *!
    t_surf = 28.0       ! Surface temp (degC)

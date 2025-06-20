@@ -19,7 +19,7 @@ This demonstration aims to evaluate the sensitivity of physical and biogeochemic
 
 The wind forcing is re-constructed using the Holland (1980) parametric cyclone model implemented in this configuration, which is widely used in the literature and relies on the gradient wind balance characteristic of mature tropical cyclones. It calculates the wind speed distribution based on a circular pressure field, which is determined using the central pressure, environmental pressure, and the radius of maximum winds.
 
-**IMAGE**
+<img src="./img/Holland_formula.png" alt="alt text" width="300" height="100"/>
 
 where,
 - `v_r`: Tangential wind speed (m/s)
@@ -44,8 +44,8 @@ Example `namelist_cfg` block under `&namusr_def`.
    msw   = 50.0         ! maximum sustained wind speed [m/s]
    pc    = 95000.0      ! pressure at the centre of the storm [Pa]
    poci  = 101000.0     ! pressure at outermost closed isobar of the storm [Pa]
-   ln_move = .false.     ! =T: Moving TC along the initial Latitude westward | =F stationary TC
-   tc_speed    = 5.0    ! Tropical cyclone moving speed [m/s]
+   ln_move = .false.    ! =T: Moving TC along the initial Latitude westward | =F stationary TC
+   tc_speed    = 0.05   ! cyclone moving speed [m/s]
   /
 ```
 
@@ -133,7 +133,7 @@ cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
 !-----------------------------------------------------------------------
    ln_zdfcst   = .false.      !  constant mixing
    ln_zdfric   = .false.      !  local Richardson dependent formulation (T =>   fill namzdf_ric)
-   ln_zdftke   = .true.      !  Turbulent Kinetic Energy closure        (T =>   fill namzdf_tke)
+   ln_zdftke   = .true.       !  Turbulent Kinetic Energy closure        (T =>   fill namzdf_tke)
    ln_zdfgls   = .false.      !  Generic Length Scale closure           (T =>   fill namzdf_gls)
    ln_zdfosm   = .false.      !  OSMOSIS BL closure                     (T =>   fill namzdf_osm)
 /
@@ -142,6 +142,7 @@ cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
 2) Adjust the horizontal resolution in `namelist_cfg` with `nn_GYRE` and/or the run duration in the `&namrun` block.  
 
 # Sample outputs
+<img src="./img/your_animation.gif" alt="alt text" width="300"/>
 
 # Acknowledgments
 
