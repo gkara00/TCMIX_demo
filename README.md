@@ -150,7 +150,6 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 | ![](./img/stationary_cyclone_TAUM.gif) | ![](./img/stationary_cyclone_SST.gif) |
 |---------------------------|---------------------------|
 | ![](./img/moving_cyclone_TAUM.gif) | ![](./img/moving_cyclone_SST.gif) |
-|---------------------------|---------------------------|
 | Wind Stress Modulus                | Sea Surface Tmperature            |
 
 - **zdftke minus zdfgls vertical mixingdifference vs Moving cyclone**
@@ -165,7 +164,7 @@ This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.ne
 
 # Future enhancements
 - Add the capability to re-constructed from storm track data (e.g., IBTrACS database)
-- Add a parameterization for heat & freshwater fluxes. In the current setup it is assumed zero.
+- Add a parameterization for heat & freshwater fluxes. In the current setup, they are considered zero.
 - Add namelist options for vertical levels discretization.
 - Add namelist options for horizontal domain coverage.
 - etc etc
