@@ -170,4 +170,4 @@ This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.ne
 - etc etc
 
 # References
-Holland, Greg J. 1980. “An Analytic Model of the Wind and Pressure Profiles in Hurricanes.” Monthly Weather Review 108 (8): 1212–18. https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTW>2.0.CO;2.
+Holland, Greg J. 1980. “An Analytic Model of the Wind and Pressure Profiles in Hurricanes.” Monthly Weather Review 108 (8): 1212–18. [https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTW>2.0.CO;2](https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTW>2.0.CO;2).
