@@ -107,7 +107,7 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 
  5) Prepare the `EXP00` run folder with `namelist_cfg` and `.xml` files of TCMIX configuration:
  ```
- cp ./cfgs/TCMIX_demo/EXPREF/{namelist_cfg, *.xml} ./cfgs/MY_TCMIX/EXP00
+ cp ./cfgs/TCMIX_demo/EXPREF/{namelist*, *.xml} ./cfgs/MY_TCMIX/EXP00
  ```
 
  6) Download a restart file for PISCES biogeochemistry [here](https://drive.google.com/drive/folders/1yqTVkbGqbG2bP5RWfq1YJB3LsUwdc0Tw?usp=sharing)
@@ -155,17 +155,20 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 
 - **zdftke minus zdfgls vertical mixingdifference vs Moving cyclone**
 
-|---------------------------|---------------------------|
 | ![](./img/zdftke-zdfgls_diff-SST.gif) | ![](./img/zdftke-zdfgls_diff-phyto.gif) |
 |---------------------------|---------------------------|
 | Sea Surface Tmperature             | (nano)Phytoplankton Concentration          |
 
 # Acknowledgments
 
-This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and insightfull discussions.
+This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-20 2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and the insightfull discussions.
 
 # Future enhancements
-- TODOs
+- Add the capability to re-constructed from storm track data (e.g., IBTrACS database)
+- Add a parameterization for heat & freshwater fluxes. In the current setup it is assumed zero.
+- Add namelist options for vertical levels discretization.
+- Add namelist options for horizontal domain coverage.
+- etc etc
 
 # References
 Holland, Greg J. 1980. “An Analytic Model of the Wind and Pressure Profiles in Hurricanes.” Monthly Weather Review 108 (8): 1212–18. https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTW>2.0.CO;2.
