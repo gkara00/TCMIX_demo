@@ -155,13 +155,14 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 
 - **zdftke minus zdfgls vertical mixingdifference vs Moving cyclone**
 
-| ![](./img/stationary_cyclone_TAUM.gif) | ![](./img/stationary_cyclone_SST.gif) |
 |---------------------------|---------------------------|
 | ![](./img/zdftke-zdfgls_diff-SST.gif) | ![](./img/zdftke-zdfgls_diff-phyto.gif) |
 |---------------------------|---------------------------|
 | Sea Surface Tmperature             | (nano)Phytoplankton Concentration          |
 
 # Acknowledgments
+
+This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and insightfull discussions.
 
 # Future enhancements
 - TODOs
