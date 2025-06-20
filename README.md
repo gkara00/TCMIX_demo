@@ -81,33 +81,44 @@ Please note that in the current TCMIX setup the initial temperature and salinity
 Before start, if you haven't compiled NEMO model on your machine, you can follow the instructions [here](https://sites.nemo-ocean.io/user-guide/install.html#download-and-install-the-nemo-code).
 
 1) First, clone this git repository: [https://github.com/gkara00/TCMIX](https://github.com/gkara00/TCMIX_demo)
-```git clone https://github.com/gkara00/TCMIX_demo.git```
+```
+git clone https://github.com/gkara00/TCMIX_demo.git
+```
 
 2) Go to the root of your NEMO working copy and build a new configuration (here called `MY_TCMIX`) from GYRE_PISCES reference configuration with:
-```./makenemo -m <my_arch> -r 'GYRE_PISCES' -n MY_TCMIX -j 4```
+```
+./makenemo -m <my_arch> -r 'GYRE_PISCES' -n MY_TCMIX -j 4
+```
 where `<my_arch>` is the name that refers to your computing environment.
 
 3) Copy the TCMIX Fortran subrourtines in `./TCMIX_demo/MY_SRC/*.F90` to your `MY_TCMIX` configuration:
-```cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/```
+```
+cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
+```
 
 4) Recompile your configuration with:
- ```./makenemo -m <my_arch> -r MY_TCMIX clean
+ ```
+ ./makenemo -m <my_arch> -r MY_TCMIX clean
  ./makenemo -m <my_arch> -r MY_TCMIX -j 4
  ```
  Once `makenemo` has run successfully, a symbolic link to the nemo executable is available in `./cfgs/MY_TCMIX/EXP00`
 
  5) Prepare the `EXP00` run folder with `namelist_cfg` and `.xml` files of TCMIX configuration:
- ```cd <path-to-nemo>/cfgs/MY_TCMIX/EXP00
+ ```
+ cd <path-to-nemo>/cfgs/MY_TCMIX/EXP00
  cp ./TCMIX_demo/EXPREF/{namelist_cfg, *.xml} <path-to-nemo>/cfgs/MY_TCMIX/EXP00
  ```
 
  6) Link a spinup restart file for PISCES biogeochemistry:
- ```wget <link>
+ ```
+ wget <link>
  ln -sf GYRE4_00069120_restart_trc.nc GYRE4_restart_trc.nc
  ```
 
  7) Run the model as per standard NEMO execution (here on a 40 cores node)
- ```mpirun -n 40 ./nemo```
+ ```
+ mpirun -n 40 ./nemo
+ ```
 
 # Sensitivity runs
 1) Change the vertical mixing scheme and give a new name to your experiment:
@@ -130,7 +141,7 @@ where `<my_arch>` is the name that refers to your computing environment.
 
 2) Adjust the horizontal resolution in `namelist_cfg` with `nn_GYRE` and/or the run duration in the `&namrun` block.  
 
-# Sample Outputs
+# Sample outputs
 
 # Acknowledgments
 
