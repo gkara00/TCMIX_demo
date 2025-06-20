@@ -19,7 +19,7 @@ This demonstration aims to evaluate the sensitivity of physical and biogeochemic
 
 The wind forcing is re-constructed using the Holland (1980) parametric cyclone model implemented in this configuration, which is widely used in the literature and relies on the gradient wind balance characteristic of mature tropical cyclones. It calculates the wind speed distribution based on a circular pressure field, which is determined using the central pressure, environmental pressure, and the radius of maximum winds.
 
-<<<IMAGE>>
+**IMAGE**
 
 where,
 - `v_r`: Tangential wind speed (m/s)
@@ -77,9 +77,6 @@ Please note that in the current TCMIX setup the initial temperature and salinity
 /
 ```
 
-# Example of run
-Run the executable (here on a 36 cores node) :
-
 # How to run
 Before start, if you haven't compiled NEMO model on your machine, you can follow the instructions [here](https://sites.nemo-ocean.io/user-guide/install.html#download-and-install-the-nemo-code).
 
@@ -110,8 +107,7 @@ where `<my_arch>` is the name that refers to your computing environment.
  ```
 
  7) Run the model as per standard NEMO execution (here on a 40 cores node)
- ```mpirun -n 40 ./nemo
- ```
+ ```mpirun -n 40 ./nemo```
 
 # Sensitivity runs
 1) Change the vertical mixing scheme and give a new name to your experiment:
@@ -133,6 +129,13 @@ where `<my_arch>` is the name that refers to your computing environment.
 ```
 
 2) Adjust the horizontal resolution in `namelist_cfg` with `nn_GYRE` and/or the run duration in the `&namrun` block.  
+
+# Sample Outputs
+
+# Acknowledgments
+
+# Future enhancements
+- TODOs
 
 # References
 Holland, Greg J. 1980. “An Analytic Model of the Wind and Pressure Profiles in Hurricanes.” Monthly Weather Review 108 (8): 1212–18. https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTW>2.0.CO;2.
