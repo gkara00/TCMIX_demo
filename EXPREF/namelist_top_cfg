@@ -8,7 +8,7 @@
    nn_rsttr      =   0       !  restart control = 0 initial time step is not compared to the restart file value
                              !                  = 1 do not use the value in the restart file
                              !                  = 2 calendar parameters read in the restart file
-   cn_trcrst_in  = "GYRE4_00069120_restart_trc"   !  suffix of pass. sn_tracer restart name (input)
+   cn_trcrst_in  = "GYRE4_restart_trc"   !  suffix of pass. sn_tracer restart name (input)
    cn_trcrst_indir = "."           !  directory from which to read input passive tracer restarts
    cn_trcrst_out = "restart_trc"   !  suffix of pass. sn_tracer restart name (output)
    cn_trcrst_outdir = "."          !  directory to which to write output passive tracer restarts
@@ -16,7 +16,7 @@
 !-----------------------------------------------------------------------
 &namtrc          !   tracers definition
 !-----------------------------------------------------------------------
-   jp_bgc        =  9 
+   jp_bgc        =  9
 !
    ln_pisces     =  .true.
    ln_my_trc     =  .false.
@@ -40,7 +40,7 @@
    sn_tracer(9)   = 'Fer     ' , 'Dissolved Iron Concentration           ',  'mol-C/L' , .true.  , .true. , .true. , .false. , .true.
 /
 !-----------------------------------------------------------------------
-&namage          !   AGE 
+&namage          !   AGE
 !-----------------------------------------------------------------------
 /
 !-----------------------------------------------------------------------
@@ -53,8 +53,8 @@
 &namtrc_adv      !   advection scheme for passive tracer                (default: NO selection)
 !-----------------------------------------------------------------------
    ln_trcadv_fct =  .true.  !  FCT scheme
-      nn_fct_h   =  2               !  =2/4, horizontal 2nd / 4th order 
-      nn_fct_v   =  2               !  =2/4, vertical   2nd / COMPACT 4th order 
+      nn_fct_h   =  2               !  =2/4, horizontal 2nd / 4th order
+      nn_fct_v   =  2               !  =2/4, vertical   2nd / COMPACT 4th order
 /
 !-----------------------------------------------------------------------
 &namtrc_ldf      !   lateral diffusion scheme for passive tracer        (default: NO selection)
@@ -62,7 +62,7 @@
    ln_trcldf_tra   =  .true.     !  use active tracer setting
 /
 !-----------------------------------------------------------------------
-&namtrc_rad      !  treatment of negative concentrations 
+&namtrc_rad      !  treatment of negative concentrations
 !-----------------------------------------------------------------------
 /
 !-----------------------------------------------------------------------
@@ -75,7 +75,7 @@
    ln_varpar     =  .false.     ! Read PAR from file
 /
 !-----------------------------------------------------------------------
-&namtrc_dmp      !   passive tracer newtonian damping   
+&namtrc_dmp      !   passive tracer newtonian damping
 !-----------------------------------------------------------------------
 /
 !-----------------------------------------------------------------------
