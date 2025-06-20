@@ -80,43 +80,45 @@ Please note that in the current TCMIX setup the initial temperature and salinity
 # How to run
 Before start, if you haven't compiled NEMO model on your machine, you can follow the instructions [here](https://sites.nemo-ocean.io/user-guide/install.html#download-and-install-the-nemo-code).
 
-1) First, clone this git repository: [https://github.com/gkara00/TCMIX](https://github.com/gkara00/TCMIX_demo)
+1) First, go to the root of your NEMO working copy and clone this git repository: [https://github.com/gkara00/TCMIX](https://github.com/gkara00/TCMIX_demo)
 ```
+cd <path-to-nemo>/cfgs
 git clone https://github.com/gkara00/TCMIX_demo.git
 ```
 
-2) Go to the root of your NEMO working copy and build a new configuration (here called `MY_TCMIX`) from GYRE_PISCES reference configuration with:
+2) Build a new configuration (here called `MY_TCMIX`) from GYRE_PISCES reference configuration with:
 ```
+cd ../
 ./makenemo -m <my_arch> -r 'GYRE_PISCES' -n MY_TCMIX -j 4
 ```
 where `<my_arch>` is the name that refers to your computing environment.
 
-3) Copy the TCMIX Fortran subrourtines in `./TCMIX_demo/MY_SRC/*.F90` to your `MY_TCMIX` configuration:
+3) Copy the TCMIX Fortran subroutines in to your `MY_TCMIX` configuration:
 ```
-cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
+cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 ```
 
 4) Recompile your configuration with:
  ```
- ./makenemo -m <my_arch> -r MY_TCMIX clean
- ./makenemo -m <my_arch> -r MY_TCMIX -j 4
+ ./makenemo -m <my_arch> -r 'GYRE_PISCES' -n MY_TCMIX clean
+ ./makenemo -m <my_arch> -r 'GYRE_PISCES' -n MY_TCMIX -j 4
  ```
  Once `makenemo` has run successfully, a symbolic link to the nemo executable is available in `./cfgs/MY_TCMIX/EXP00`
 
  5) Prepare the `EXP00` run folder with `namelist_cfg` and `.xml` files of TCMIX configuration:
  ```
- cd <path-to-nemo>/cfgs/MY_TCMIX/EXP00
- cp ./TCMIX_demo/EXPREF/{namelist_cfg, *.xml} <path-to-nemo>/cfgs/MY_TCMIX/EXP00
+ cp ./cfgs/TCMIX_demo/EXPREF/{namelist_cfg, *.xml} ./cfgs/MY_TCMIX/EXP00
  ```
 
  6) Download a restart file for PISCES biogeochemistry [here](https://drive.google.com/drive/folders/1yqTVkbGqbG2bP5RWfq1YJB3LsUwdc0Tw?usp=sharing)
- and link it to the run directory:
+ and link it to the run directory. It is a restart from a 2-year simulation with GYRE_PISCES configuration at 1/4 horizontal resolution.
  ```
- ln -sf GYRE4_restart_trc.nc ./cfgs/EXP00/MY_TCMIX/GYRE4_restart_trc.nc
+ ln -sf <path-to-donwload>/GYRE4_restart_trc.nc ./cfgs/EXP00/MY_TCMIX/GYRE4_restart_trc.nc
  ```
 
  7) Run the model as per standard NEMO execution (here on a 40 cores node)
  ```
+ cd ./cfgs/MY_TCMIX/EXP00
  mpirun -n 40 ./nemo
  ```
 
@@ -139,10 +141,25 @@ cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
 /
 ```
 
-2) Adjust the horizontal resolution in `namelist_cfg` with `nn_GYRE` and/or the run duration in the `&namrun` block.  
+2) Adjust the horizontal resolution in `namelist_cfg` with `nn_GYRE` and/or the run duration in the `&namrun` block.
 
 # Sample outputs
-<img src="./img/your_animation.gif" alt="alt text" width="300"/>
+
+- **Stationary vs Moving cyclone**
+
+| ![](./img/stationary_cyclone_TAUM.gif) | ![](./img/stationary_cyclone_SST.gif) |
+|---------------------------|---------------------------|
+| ![](./img/moving_cyclone_TAUM.gif) | ![](./img/moving_cyclone_SST.gif) |
+|---------------------------|---------------------------|
+| Wind Stress Modulus                | Sea Surface Tmperature            |
+
+- **zdftke minus zdfgls vertical mixingdifference vs Moving cyclone**
+
+| ![](./img/stationary_cyclone_TAUM.gif) | ![](./img/stationary_cyclone_SST.gif) |
+|---------------------------|---------------------------|
+| ![](./img/zdftke-zdfgls_diff-SST.gif) | ![](./img/zdftke-zdfgls_diff-phyto.gif) |
+|---------------------------|---------------------------|
+| Sea Surface Tmperature             | (nano)Phytoplankton Concentration          |
 
 # Acknowledgments
 
