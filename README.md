@@ -109,10 +109,10 @@ cp ./TCMIX_demo/MY_SRC/*.F90 <path-to-nemo>/cfgs/MY_TCMIX/MY_SRC/
  cp ./TCMIX_demo/EXPREF/{namelist_cfg, *.xml} <path-to-nemo>/cfgs/MY_TCMIX/EXP00
  ```
 
- 6) Link a spinup restart file for PISCES biogeochemistry:
+ 6) Download a restart file for PISCES biogeochemistry [here](https://drive.google.com/drive/folders/1yqTVkbGqbG2bP5RWfq1YJB3LsUwdc0Tw?usp=sharing)
+ and link it to the run directory:
  ```
- wget <link>
- ln -sf GYRE4_00069120_restart_trc.nc GYRE4_restart_trc.nc
+ ln -sf GYRE4_restart_trc.nc ./cfgs/EXP00/MY_TCMIX/GYRE4_restart_trc.nc
  ```
 
  7) Run the model as per standard NEMO execution (here on a 40 cores node)
