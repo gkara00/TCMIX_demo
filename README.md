@@ -152,20 +152,20 @@ cp ./cfgs/TCMIX_demo/MY_SRC/*.F90 ./cfgs/MY_TCMIX/MY_SRC/
 | ![](./img/stationary_cyclone_TAUM.gif) | ![](./img/stationary_cyclone_SST.gif) |
 |---------------------------|---------------------------|
 | ![](./img/moving_cyclone_TAUM.gif) | ![](./img/moving_cyclone_SST.gif) |
-| Wind Stress Modulus                | Sea Surface Tmperature            |
+| Wind Stress Modulus                | Sea Surface Temperature            |
 
-- **zdftke minus zdfgls vertical mixingdifference vs Moving cyclone**
+- **zdftke minus zdfgls vertical mixing scheme difference for moving cyclone case**
 
 | ![](./img/zdftke-zdfgls_diff-SST.gif) | ![](./img/zdftke-zdfgls_diff-phyto.gif) |
 |---------------------------|---------------------------|
-| Sea Surface Tmperature             | (nano)Phytoplankton Concentration          |
+| Sea Surface Temperature             | (nano)Phytoplankton Concentration          |
 
 # Acknowledgments
 
 This demonstrator was developed as part of [NEMO Zoo Hackathon](https://forge.nemo-ocean.eu/nemo/nemo/-/wikis/NEMO-Party-2025-Info) held on June 16-20 2025 at the UK Met Office (Exeter). Many thanks to Dr. Julien Palmieri and Dr. Renaud Person for the mentoring and the insightful discussions.
 
 # Future enhancements
-- Add the capability to re-constructed from storm track data (e.g., IBTrACS database)
+- Add the capability to re-construct wind fields from storm track data (e.g., IBTrACS database)
 - Add a parameterization for heat & freshwater fluxes. In the current setup, they are considered zero.
 - Add namelist options for vertical levels discretization.
 - Add namelist options for horizontal domain coverage.
